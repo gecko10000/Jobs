@@ -399,15 +399,15 @@ public class GuiManager {
 
         if (!Jobs.getGCManager().DisableJoiningJobThroughGui) {
             if (jPlayer.isInJob(job)) {
-                CMIGuiButton button = new CMIGuiButton(40, Jobs.getGCManager().guiLeaveButton) {
+                gui.addButton(generateLeaveButton(player, job, fromCommand, 40));
+                /*CMIGuiButton button = new CMIGuiButton(40, Jobs.getGCManager().guiLeaveButton) {
                     @Override
                     public void click(GUIClickType type) {
-                        leaveConfirmation(player, job, fromCommand, guiSize);
                     }
                 };
                 button.setName(Jobs.getLanguage().getMessage("general.info.leave"));
 
-                gui.addButton(button);
+                gui.addButton(button);*/
             } else if (Jobs.getPlayerManager().getJobsLimit(jPlayer, (short) jPlayer.getJobProgression().size())) {
                 gui.addButton(generateJoinButton(player, job, fromCommand, 39));
                 gui.addButton(generateJoinButton(player, job, fromCommand, 40));
