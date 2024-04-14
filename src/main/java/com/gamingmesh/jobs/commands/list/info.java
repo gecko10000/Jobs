@@ -13,6 +13,8 @@ import com.gamingmesh.jobs.i18n.Language;
 import net.Zrips.CMILib.Locale.LC;
 import net.Zrips.CMILib.Messages.CMIMessages;
 
+import java.util.stream.Stream;
+
 public class info implements Cmd {
 
     @Override
@@ -45,9 +47,9 @@ public class info implements Cmd {
             CMIMessages.sendMessage(pSender, LC.info_NoPermission);
             return true;
         }
-
+        boolean fromCommand = Stream.of(args).noneMatch(s -> s.equals("--not-command"));
         if (Jobs.getGCManager().jobsInfoOpensBrowse) {
-            plugin.getGUIManager().openJobsBrowseGUI(pSender, job, true);
+            plugin.getGUIManager().openJobsBrowseGUI(pSender, job, fromCommand);
             return true;
         }
 

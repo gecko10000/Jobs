@@ -391,7 +391,8 @@ public class GuiManager {
             gui.addButton(new CMIGuiButton(backButton, back) {
                 @Override
                 public void click(GUIClickType type) {
-                    openJobsBrowseGUI(player);
+                    Bukkit.dispatchCommand(player, Jobs.getGCManager().infoGuiBackCommand);
+                    //openJobsBrowseGUI(player);
                 }
             });
         }

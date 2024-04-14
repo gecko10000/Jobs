@@ -112,6 +112,8 @@ public class GeneralConfigManager {
         LoggingUse, payForCombiningItems, BlastFurnacesReassign = false, SmokerReassign = false, payForStackedEntities, payForAbove = false,
         payForEachVTradeItem, allowEnchantingBoostedItems, bossBarAsync = false, preventShopItemEnchanting;
 
+    public String infoGuiBackCommand;
+
     public boolean jobsshopenabled;
     public boolean DailyQuestsEnabled;
 
@@ -1162,6 +1164,8 @@ public class GeneralConfigManager {
         ConfirmExpiryTime = c.get("Commands.JobsLeave.ConfirmExpiryTime", 10);
         c.addComment("Commands.JobsInfo.open-browse", "Open up the jobs browse action list, when your performed /jobs info command?");
         jobsInfoOpensBrowse = c.get("Commands.JobsInfo.open-browse", false);
+        c.addComment("Commands.JobsInfo.back-command", "Defines the command to run for the back button.", "Executed as the player.");
+        infoGuiBackCommand = c.get("Commands.JobsInfo.back-command", "jobs browse");
 
         c.addComment("BlockOwnership.Range", "Set to 0 or lower if you want to disable this. Setting to positive number will mean that player needs to be in this range from owner block to get paid");
         blockOwnershipRange = c.get("BlockOwnership.Range", 0);
