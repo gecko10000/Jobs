@@ -1614,7 +1614,7 @@ public final class JobsPaymentListener implements Listener {
         if (!Jobs.getGCManager().useBreederFinder || !Jobs.getGCManager().canPerformActionInWorld(event.getEntity().getWorld()))
             return;
 
-        if (!event.getSpawnReason().toString().equalsIgnoreCase("BREEDING") && !event.getSpawnReason().toString().equalsIgnoreCase("EGG"))
+        if (!event.getSpawnReason().toString().equalsIgnoreCase("BREEDING"))
             return;
 
         LivingEntity animal = event.getEntity();
