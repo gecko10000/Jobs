@@ -300,8 +300,7 @@ public final class JobsPaymentListener implements Listener {
             if (time != null) {
                 if (System.currentTimeMillis() < time + Jobs.getGCManager().CowMilkingTimer) {
                     long timer = ((Jobs.getGCManager().CowMilkingTimer - (System.currentTimeMillis() - time)) / 1000);
-                    player.sendMessage(Jobs.getLanguage().getMessage("message.cowtimer", "%time%", timer));
-
+                    player.sendActionBar(Jobs.getLanguage().getMessage("message.cowtimer", "%time%", timer));
                     if (Jobs.getGCManager().CancelCowMilking)
                         event.setCancelled(true);
                     return;
@@ -648,7 +647,6 @@ public final class JobsPaymentListener implements Listener {
 
         //Check if inventory is full and using shift click, possible money dupping fix
         if (player.getInventory().firstEmpty() == -1 && event.isShiftClick()) {
-            player.sendMessage(Jobs.getLanguage().getMessage("message.crafting.fullinventory"));
             return;
         }
 
